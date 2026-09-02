@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineBook | Cinema Seat Booking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><div class="logo">C</div><div><h1>CineBook</h1><small>Cinema Seat Booking System</small></div></div>
+  <button id="themeBtn" class="theme-btn">☾</button>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div>
+      <p class="eyebrow">CINEMA BOOKING</p>
+      <h2>Choose your seat.<br><span>Enjoy the show.</span></h2>
+      <p>Book, cancel and search cinema seats from one simple dashboard.</p>
+    </div>
+    <div class="total-badge"><b>20</b><span>Total Seats</span></div>
+  </section>
+
+  <section class="stats">
+    <div class="stat"><i class="green"></i><div><b id="availableCount">20</b><small>Available</small></div></div>
+    <div class="stat"><i class="red"></i><div><b id="bookedCount">0</b><small>Booked</small></div></div>
+    <div class="stat"><i class="purple"></i><div><b>20</b><small>Total Seats</small></div></div>
+  </section>
+
+  <section class="card">
+    <div class="heading"><div><p class="eyebrow">01 · VIEW SEATS</p><h3>Select a Seat</h3></div>
+      <div class="legend"><span>🟢 Available</span><span>🔴 Booked</span><span>🟣 Selected</span></div>
+    </div>
+    <div class="screen">SCREEN</div>
+    <div id="seatMap" class="seat-map"></div>
+    <div id="selectionBar" class="selection hidden"><div>Selected seat <b id="selectedSeat">—</b></div><button id="useSeat" class="primary">Use This Seat</button></div>
+  </section>
+
+  <div class="two-col">
+    <section class="card">
+      <p class="eyebrow">02 · BOOK SEAT</p><h3>Customer Details</h3>
+      <form id="bookingForm">
+        <label>Customer Name<input id="name" maxlength="50" placeholder="Enter customer name"></label>
+        <label>Phone Number<input id="phone" maxlength="15" inputmode="numeric" placeholder="Enter phone number"></label>
+        <label>Seat Number<input id="seat" type="number" min="1" max="20" placeholder="1 - 20"></label>
+        <button class="primary full" type="submit">Confirm Booking</button>
+      </form>
+      <p id="message" class="message"></p>
+    </section>
+
+    <section class="card">
+      <p class="eyebrow">03 · SEARCH BOOKING</p><h3>Find a Booking</h3>
+      <div class="search"><input id="search" placeholder="Name, phone or seat number"><button id="searchBtn" class="secondary">Search</button></div>
+      <div id="results" class="results muted">Search for a customer, phone or seat.</div>
+    </section>
+  </div>
+
+  <section class="card">
+    <div class="heading"><div><p class="eyebrow">04 · VIEW BOOKINGS</p><h3>Current Bookings</h3></div><button id="clearAll" class="danger">Clear All</button></div>
+    <div class="table-wrap"><table><thead><tr><th>Seat</th><th>Customer</th><th>Phone</th><th>Action</th></tr></thead><tbody id="bookingTable"></tbody></table></div>
+  </section>
+
+  <section class="note"><div><p class="eyebrow">PROJECT</p><h3>Built for the PDF requirements</h3><p>20 fixed seats, booking, cancellation, viewing bookings, search and input validation.</p></div><div class="chips"><span>20 Seats</span><span>No Duplicate Booking</span><span>3 Search Methods</span></div></section>
+</main>
+<footer>CineBook · Cinema Seat Booking System · Mini Project</footer>
+<script src="https://www.gstatic.com/firebasejs/12.18.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.18.0/firebase-database-compat.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
