@@ -8,9 +8,54 @@
 </head>
 <body>
 <header class="topbar">
-  <div class="brand"><div class="logo">C</div><div><h1>CineBook</h1><small>Cinema Seat Booking System</small></div></div>
-  <button id="themeBtn" class="theme-btn">☾</button>
+  <div class="brand">
+    <div class="logo">C</div>
+    <div>
+      <h1>CineBook</h1>
+      <small>Cinema Seat Booking System</small>
+    </div>
+  </div>
+
+  <div class="top-actions">
+    <button id="adminBtn" class="secondary">🔐 Admin Login</button>
+    <button id="logoutBtn" class="secondary hidden">Logout</button>
+    <button id="themeBtn" class="theme-btn">☾</button>
+  </div>
 </header>
+<section id="adminPanel" class="admin-panel hidden">
+  <div class="card">
+    <p class="eyebrow">ADMIN ACCESS</p>
+    <h3>Admin Login</h3>
+
+    <form id="adminLoginForm">
+      <label>
+        Admin Email
+        <input
+          id="adminEmail"
+          type="email"
+          placeholder="Enter admin email"
+          required
+        >
+      </label>
+
+      <label>
+        Password
+        <input
+          id="adminPassword"
+          type="password"
+          placeholder="Enter password"
+          required
+        >
+      </label>
+
+      <button class="primary full" type="submit">
+        Login
+      </button>
+    </form>
+
+    <p id="adminMessage" class="message"></p>
+  </div>
+</section>
 
 <main class="container">
   <section class="hero">
@@ -28,7 +73,7 @@
     <div class="stat"><i class="purple"></i><div><b>20</b><small>Total Seats</small></div></div>
   </section>
 
-  <section class="card">
+  <section id="bookingDetails" class="card hidden">
     <div class="heading"><div><p class="eyebrow">01 · VIEW SEATS</p><h3>Select a Seat</h3></div>
       <div class="legend"><span>🟢 Available</span><span>🔴 Booked</span><span>🟣 Selected</span></div>
     </div>
@@ -65,6 +110,7 @@
 </main>
 <footer>CineBook · Cinema Seat Booking System · Mini Project</footer>
 <script src="https://www.gstatic.com/firebasejs/12.18.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.18.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/12.18.0/firebase-database-compat.js"></script>
 <script src="script.js"></script>
 </body>
